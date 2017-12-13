@@ -38,7 +38,7 @@ double TableModel::distanceTo(TableModel const & target){
 int main(int argc, char** argv){
 
 	TableModel mod1(0,0, 25);
-	TableModel mod2(100,100, 32);
+	TableModel mod2(110,110, 32);
 
 	std::cout<<"Distance to target: " <<mod1.distanceTo(mod2)<<std::endl;
 
