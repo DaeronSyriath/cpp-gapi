@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <math.h>
+#include <vector>
 
 class TablePosition{
 public:
@@ -34,6 +35,23 @@ public:
 double TableModel::distanceTo(TableModel const & target){
 	return position.distanceTo(target.position) - radius - target.radius;
 }
+
+
+
+class PileInChromosome{
+public:
+	std::vector<TableModel> & models;
+	std::vector<TableModel> & opponents;
+	std::vector<TablePosition> moves;
+	PileInChromosome(std::vector<TableModel> const & models, std::vector<TableModel> const & opponents):models(models), opponents(opponents){
+		moves.reserve(models.size());
+		for(int i = 0; i<models.size(); i++ ){
+			moves.push_back(models[i].position)
+		}
+	}
+};
+
+
 
 int main(int argc, char** argv){
 
